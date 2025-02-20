@@ -130,9 +130,22 @@ func Soal11(n int) []int {
 		if i%2 == 0 {
 			result[i] = 0
 		} else {
-			result[i] = (i/2 + 1) * (i/2 + 1)
-
+			if i <= 3 {
+				result[i] = i
+			} else {
+				result[i] = result[i-2] * 2
+			}
 		}
+	}
+
+	return result
+}
+
+func Soal12(n int) []int {
+	result := make([]int, n)
+
+	for i := range result {
+		result[i] = (i%4)*2 + 1
 	}
 
 	return result
