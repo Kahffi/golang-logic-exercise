@@ -79,7 +79,7 @@ func Soal5(n int) [][]int {
 			if direction > 0 {
 				row[colIdx] = currentVal
 			} else {
-				row[len(row)-colIdx-1] = currentVal
+				row[n-colIdx-1] = currentVal
 			}
 			currentVal += 2
 		}
@@ -178,7 +178,7 @@ func Soal8(n int) [][]int {
 	for rowIdx, rows := range result {
 		for colIdx := range rows {
 			if rowIdx == colIdx {
-				result[len(result)-rowIdx-1][colIdx] = currentVal
+				result[n-rowIdx-1][colIdx] = currentVal
 				currentVal += 2
 			}
 
@@ -192,19 +192,87 @@ func Soal8(n int) [][]int {
 
 func Soal9(n int) [][]int {
 	result := generateIntGrid(n, n)
-	currentVal := 1
 
 	for rowIdx, rows := range result {
+		currentVal := 1
 		for colIdx := range rows {
-			if rowIdx == colIdx {
+			if colIdx == n-1-rowIdx || colIdx == 0+rowIdx {
 				rows[colIdx] = currentVal
-				currentVal += 2
 			}
+			currentVal += 2
 
 		}
 
 	}
+	return result
+}
+
+func Soal10(n int) [][]int {
+	result := generateIntGrid(n, n)
+
+	for rowIdx, rows := range result {
+		currentVal := 1
+		for colIdx := range rows {
+			if colIdx <= rowIdx {
+				rows[colIdx] = currentVal
+			}
+			currentVal += 2
+		}
+	}
+
+	return result
+}
+
+func Soal11(n int) [][]int {
+	result := generateIntGrid(n, n)
+
+	for rowIdx, rows := range result {
+		currentVal := 1
+		for colIdx := range rows {
+			if colIdx >= rowIdx {
+				rows[colIdx] = currentVal
+			}
+			currentVal += 2
+		}
+	}
 
 	return result
 
+}
+
+func Soal13(n int) [][]int {
+	result := generateIntGrid(n, n)
+
+	for rowIdx, row := range result {
+		currentVal := 1
+		for colIdx := range row {
+			if colIdx >= rowIdx && colIdx < n-rowIdx || colIdx <= rowIdx && colIdx >= n-rowIdx-1 {
+				row[colIdx] = currentVal
+			}
+			// mengganti area setelah row 4 yang telah terisi sebelumnya menjadi kosong
+			// !(colIdx > rowIdx || colIdx < n-rowIdx-1)
+
+			currentVal += 2
+
+		}
+	}
+
+	return result
+}
+func Soal12(n int) [][]int {
+	result := generateIntGrid(n, n)
+
+	for rowIdx, row := range result {
+		currentVal := 1
+		for colIdx := range row {
+			if rowIdx >= colIdx && rowIdx < n-colIdx || rowIdx <= colIdx && rowIdx >= n-colIdx-1 {
+				row[colIdx] = currentVal
+			}
+
+			currentVal += 2
+
+		}
+	}
+
+	return result
 }
