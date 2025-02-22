@@ -156,17 +156,10 @@ func Soal7(n int) [][]int {
 	result := generateIntGrid(n, n)
 	currentVal := 1
 
-	for rowIdx, rows := range result {
-		for colIdx := range rows {
-			if rowIdx == colIdx {
-				rows[colIdx] = currentVal
-				currentVal += 2
-			}
-
-		}
-
+	for rowIdx := range result {
+		result[rowIdx][rowIdx] = currentVal
+		currentVal += 2
 	}
-
 	return result
 
 }
@@ -175,19 +168,11 @@ func Soal8(n int) [][]int {
 	result := generateIntGrid(n, n)
 	currentVal := 1
 
-	for rowIdx, rows := range result {
-		for colIdx := range rows {
-			if rowIdx == colIdx {
-				result[n-rowIdx-1][colIdx] = currentVal
-				currentVal += 2
-			}
-
-		}
-
+	for rowIdx := range result {
+		result[n-1-rowIdx][rowIdx] = currentVal
+		currentVal += 2
 	}
-
 	return result
-
 }
 
 func Soal9(n int) [][]int {
