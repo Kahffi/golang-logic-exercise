@@ -3,7 +3,7 @@ module github.com/Kahffi/golang-logic-exercise
 go 1.24.0
 
 require (
-	github.com/Kahffi/go-print-slice v1.0.4
+	github.com/Kahffi/go-print-slice v1.0.6
 	github.com/stretchr/testify v1.10.0
 )
 

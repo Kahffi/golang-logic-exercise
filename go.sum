@@ -1,5 +1,5 @@
-github.com/Kahffi/go-print-slice v1.0.4 h1:W0nitkn9QmYSjNd6Or0oN7pJf9p/HB4FMfYvoK2ZQKM=
-github.com/Kahffi/go-print-slice v1.0.4/go.mod h1:tydMMsPIRLW79upjLsboPuwVo72GK3idXfMKe60gTA4=
+github.com/Kahffi/go-print-slice v1.0.6 h1:ToxvU3+aX4/LBeLed9HegglIRdozbwvXsEOXyuMAo5g=
+github.com/Kahffi/go-print-slice v1.0.6/go.mod h1:tydMMsPIRLW79upjLsboPuwVo72GK3idXfMKe60gTA4=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

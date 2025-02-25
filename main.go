@@ -4,6 +4,7 @@ import (
 	slice "github.com/Kahffi/go-print-slice"
 	"github.com/Kahffi/golang-logic-exercise/logic1"
 	"github.com/Kahffi/golang-logic-exercise/logic2"
+	"github.com/Kahffi/golang-logic-exercise/logic3"
 )
 
 func main() {
@@ -24,4 +25,12 @@ func main() {
 	slice.PrintSlice2D(logic2.Soal11(9), "logic2 - soal 11 (n=9)")
 	slice.PrintSlice2D(logic2.Soal12(9), "logic2 - soal 12 (n=9)")
 	slice.PrintSlice2D(logic2.Soal13(9), "logic2 - soal 13 (n=9)")
+	slice.PrintSlice2D(logic3.Soal1(9), "logic3 - Soal 1 (n=9)")
+	slice.PrintSlice2D(logic3.Soal2(9), "logic3 - Soal 2 (n=9)")
+	slice.PrintSlice2D(logic3.Soal3(9), "logic3 - Soal 3 (n=9)")
+	slice.PrintSlice2D(logic3.Soal4(9), "logic3 - Soal 4 (n=9)")
+	slice.PrintSlice2D(logic3.Soal5(9), "logic3 - Soal 5 (n=9)")
+	slice.PrintSlice2D(logic3.Soal7(9), "logic3 - Soal 7 (n=9)")
+	slice.PrintSlice2D(logic3.Soal8(9), "logic3 - Soal 8 (n=9)")
+	slice.PrintSlice2D(logic3.Soal10(9), "logic3 - Soal 10 (n=9)")
 }
