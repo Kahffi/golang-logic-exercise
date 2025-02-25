@@ -124,6 +124,30 @@ func Soal5(n int) [][]int {
 	return result
 }
 
+func Soal6(n int) [][]int {
+	result := generateIntGrid(n, n)
+	val := 1
+	// mid := (n - 1) / 2
+
+	for rowIdx := 0; rowIdx < n; rowIdx++ {
+		for colIdx := 0; colIdx < n; colIdx++ {
+			if !(rowIdx <= colIdx && rowIdx+colIdx <= n-1) {
+				continue
+			}
+			if rowIdx%2 == 0 {
+				result[rowIdx][colIdx] = val
+				result[n-1-rowIdx][colIdx] = val
+			} else {
+				result[rowIdx][n-1-colIdx] = val
+				result[n-1-rowIdx][n-1-colIdx] = val
+			}
+			val += 2
+		}
+	}
+
+	return result
+}
+
 func Soal7(n int) [][]int {
 	result := generateIntGrid(n, n)
 	val := 1
@@ -178,6 +202,34 @@ func Soal8(n int) [][]int {
 	return result
 }
 
+func Soal9(n int) [][]int {
+	result := generateIntGrid(n, n)
+	mid := (n - 1) / 2
+
+	for rowIdx, row := range result {
+		if rowIdx > mid {
+			break
+		}
+		val := 1
+		for colIdx := range row {
+			if colIdx > mid {
+				break
+			}
+			if rowIdx >= mid-colIdx && rowIdx+colIdx >= mid {
+				result[rowIdx][colIdx] = val
+				result[rowIdx][n-1-colIdx] = val
+				result[n-1-rowIdx][colIdx] = val
+				result[n-1-rowIdx][n-1-colIdx] = val
+
+				val += 2
+			}
+
+		}
+	}
+
+	return result
+}
+
 func Soal10(n int) [][]int {
 	result := generateIntGrid(n, n)
 	mid := (n - 1) / 2
@@ -203,4 +255,95 @@ func Soal10(n int) [][]int {
 	}
 	return result
 
+}
+
+func Soal11(n int) [][]int {
+	result := generateIntGrid(n, n)
+	val := 1
+	mid := (n - 1) / 2
+
+	for rowIdx, row := range result {
+		if rowIdx > mid {
+			break
+		}
+		for colIdx := range row {
+			if colIdx > mid {
+				break
+			}
+			if !(colIdx <= rowIdx && rowIdx+colIdx <= n-1) {
+				continue
+			}
+			// right side area
+			if rowIdx%2 == 0 {
+				// top-half
+				result[rowIdx][n-1-colIdx] = val
+				// bottom-half
+				result[n-1-rowIdx][n-1-colIdx] = val
+			} else {
+				// top-half
+				result[rowIdx][n-1+colIdx-rowIdx] = val
+				// bottom-half
+				result[n-1-rowIdx][n-1+colIdx-rowIdx] = val
+			}
+			// left side line
+			if colIdx == rowIdx && rowIdx < mid {
+				result[rowIdx][colIdx] = rowIdx*2 + 1
+				result[n-1-rowIdx][colIdx] = rowIdx*2 + 1
+			}
+			val += 2
+
+		}
+	}
+
+	return result
+}
+
+func Soal11B(n int) [][]int {
+	mid := (n - 1) / 2
+	result := generateIntGrid(n, n+mid)
+	val := 1
+
+	for rowIdx, row := range result {
+		if rowIdx > mid {
+			break
+		}
+		for colIdx := range row {
+			if colIdx > mid {
+				break
+			}
+			if !(colIdx <= rowIdx && rowIdx+colIdx <= n-1) {
+				continue
+			}
+			// right side area
+			if rowIdx%2 == 0 {
+				// top-half left
+				result[rowIdx][n-1-colIdx] = val
+				// top-half right
+				result[rowIdx][n-1+colIdx] = val
+
+				// bottom-half
+				result[n-1-rowIdx][n-1-colIdx] = val
+				result[n-1-rowIdx][n-1+colIdx] = val
+			} else {
+				// top-half left
+				result[rowIdx][n-1+colIdx-rowIdx] = val
+				// top-half right
+				result[rowIdx][n-1-colIdx+rowIdx] = val
+
+				// bottom-half left
+				result[n-1-rowIdx][n-1+colIdx-rowIdx] = val
+				// bottom-half left
+				result[n-1-rowIdx][n-1-colIdx+rowIdx] = val
+			}
+			// left-side line
+			if colIdx == rowIdx && rowIdx < mid {
+				result[rowIdx][colIdx] = rowIdx*2 + 1
+				result[n-1-rowIdx][colIdx] = rowIdx*2 + 1
+			}
+			val += 2
+
+		}
+	}
+
+	return result
 }

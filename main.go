@@ -30,7 +30,11 @@ func main() {
 	slice.PrintSlice2D(logic3.Soal3(9), "logic3 - Soal 3 (n=9)")
 	slice.PrintSlice2D(logic3.Soal4(9), "logic3 - Soal 4 (n=9)")
 	slice.PrintSlice2D(logic3.Soal5(9), "logic3 - Soal 5 (n=9)")
+	slice.PrintSlice2D(logic3.Soal6(9), "logic3 - Soal 6 (n=9)")
 	slice.PrintSlice2D(logic3.Soal7(9), "logic3 - Soal 7 (n=9)")
 	slice.PrintSlice2D(logic3.Soal8(9), "logic3 - Soal 8 (n=9)")
+	slice.PrintSlice2D(logic3.Soal9(9), "logic3 - Soal 9 (n=9)")
 	slice.PrintSlice2D(logic3.Soal10(9), "logic3 - Soal 10 (n=9)")
+	slice.PrintSlice2D(logic3.Soal11(9), "logic3 - Soal 11 (n=9)")
+	slice.PrintSlice2D(logic3.Soal11B(9), "logic3 - Soal 11B (n=9)")
 }
