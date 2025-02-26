@@ -448,17 +448,17 @@ func Soal13(n int) [][]int {
 		if rowIdx > mid {
 			break
 		}
-		val := 1
+		val := 2*rowIdx + 1
 		for colIdx := range row {
 			if colIdx > mid {
 				break
 			}
 			if rowIdx >= mid-colIdx && rowIdx+colIdx >= mid {
 				if colIdx%2 == 0 && rowIdx%2 == 0 || colIdx%2 != 0 && rowIdx%2 != 0 {
-					result[rowIdx][colIdx] = val
-					// result[rowIdx][n-1-colIdx] = val
-					// result[n-1-rowIdx][colIdx] = val
-					// result[n-1-rowIdx][n-1-colIdx] = val
+					result[colIdx][rowIdx] = val
+					result[colIdx][n-1-rowIdx] = val
+					result[n-1-colIdx][rowIdx] = val
+					result[n-1-colIdx][n-1-rowIdx] = val
 				}
 
 				val += 2
