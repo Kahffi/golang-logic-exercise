@@ -37,4 +37,8 @@ func main() {
 	slice.PrintSlice2D(logic3.Soal10(9), "logic3 - Soal 10 (n=9)")
 	slice.PrintSlice2D(logic3.Soal11(9), "logic3 - Soal 11 (n=9)")
 	slice.PrintSlice2D(logic3.Soal11B(9), "logic3 - Soal 11B (n=9)")
+	slice.PrintSlice2D(logic3.Soal12(9), "logic3 - Soal 12 (n=9)")
+	slice.PrintSlice2D(logic3.Soal12B(9), "logic3 - Soal 12B (n=9)")
+	slice.PrintSlice2D(logic3.Soal13(9), "logic3 - Soal 13 (n=9)")
+	slice.PrintSlice2D(logic3.Soal14(9), "logic3 - Soal 14 (n=9)")
 }
