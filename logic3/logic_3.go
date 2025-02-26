@@ -81,13 +81,13 @@ func Soal4(n int) [][]int {
 
 	for rowIdx, rows := range result {
 		for colIdx := range rows {
-			if n-1-rowIdx < colIdx {
+			if colIdx > rowIdx {
 				continue
 			}
 			if rowIdx%2 == 0 {
-				rows[colIdx] = currentVal
+				rows[n-1-colIdx] = currentVal
 			} else {
-				rows[n-colIdx-rowIdx-1] = currentVal
+				rows[n-1-rowIdx+colIdx] = currentVal
 			}
 			currentVal += 2
 		}
@@ -427,10 +427,10 @@ func Soal12B(n int) [][]int {
 				result[n-1-rowIdx][mid+colIdx-rowIdx] = val
 			}
 			// left side line
-			// if colIdx == rowIdx && rowIdx < mid {
-			// 	result[rowIdx][n-1-colIdx] = rowIdx*2 + 1
-			// 	result[n-1-rowIdx][n-1-colIdx] = rowIdx*2 + 1
-			// }
+			if colIdx == rowIdx && rowIdx < mid {
+				result[rowIdx][n-1+mid-colIdx] = rowIdx*2 + 1
+				result[n-1-rowIdx][n-1+mid-colIdx] = rowIdx*2 + 1
+			}
 			val += 2
 
 		}
